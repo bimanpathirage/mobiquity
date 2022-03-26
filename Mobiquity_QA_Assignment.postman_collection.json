@@ -609,56 +609,6 @@
 				}
 			},
 			"response": []
-		},
-		{
-			"name": "Get all comments on post 1 Copy",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var data = JSON.parse(responseBody);\r",
-							"\r",
-							"pm.test(\"All emails are of valid format\", function () {\r",
-							"    for(i=0; i<data.length; i++){\r",
-							"    pm.expect(data[i].email).to.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$/)\r",
-							"}\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/comments?postId={{postId0}}",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"comments"
-					],
-					"query": [
-						{
-							"key": "postId",
-							"value": "{{postId0}}"
-						}
-					]
-				}
-			},
-			"response": []
 		}
 	],
 	"variable": [
